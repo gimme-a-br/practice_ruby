@@ -34,6 +34,14 @@ class Manager < Employee
     # use email sending library...
     puts "Email sent!"
   end
+
+  def give_all_raises
+    index = 0
+    while index < @employees.length
+      @employees[index].give_annual_raise
+      index = index + 1
+    end
+  end
 end
 
 manager = Manager.new(
@@ -46,3 +54,6 @@ manager = Manager.new(
 manager.print_info
 manager.send_report
 p manager
+manager.give_all_raises
+employee1.print_info
+employee2.print_info
